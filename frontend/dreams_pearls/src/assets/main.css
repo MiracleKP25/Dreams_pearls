@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+
+.ancizar-serif {
+  font-family: "Ancizar Serif", serif;
+  font-optical-sizing: auto;
+}
+
+
+.lora {
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+}
