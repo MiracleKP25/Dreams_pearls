@@ -8,7 +8,7 @@ const Commande = {
 
   // Fonction "ajouter" pour insérer une nouvelle commande dans la base de données
   // Elle prend en paramètres : le nom du client, son email, son numéro, le prix total, et les produits commandés
-  ajouter: (client_nom, client_email, client_number, total_price, produits) => {
+  ajouter: (nom, email, numero, total, produits) => {
 
     // On retourne une promesse pour gérer l'opération de manière asynchrone (avec then / catch ou async / await)
     return new Promise((resolve, reject) => {
@@ -24,7 +24,7 @@ const Commande = {
       // Les points d'interrogation (?) seront remplacés par les valeurs fournies ci-dessous
 
       // On exécute la requête avec les valeurs correspondantes
-      db.query(sql, [client_nom, client_email, client_number, total_price, produitsJSON], (err, result) => {
+      db.query(sql, [nom, email, numero, total, JSON.stringify(produits)], (err, result) => {
         if (err) {
           // En cas d’erreur lors de la requête, on affiche le message d’erreur dans la console
           console.error('Erreur MySQL :', err.message);

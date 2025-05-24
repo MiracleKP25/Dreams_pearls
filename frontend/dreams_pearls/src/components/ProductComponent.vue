@@ -11,6 +11,7 @@ const produitsParCategorie = ref({})
 // categorieActive stocke la catégorie actuellement sélectionnée (ex: "Collier")
 const categorieActive = ref('')
 
+// categorieActive stocke le message de confirmation du message
 const confirmationMessage = ref('')
 
 // produitsVisibles garde le nombre de produits affichés pour chaque catégorie (initialement 8)
@@ -77,7 +78,7 @@ const addProductToCart = (produit) => {
     confirmationMessage.value = 'Votre produit a été enregistrée avec succès ! Merci 😊'
     setTimeout(() => {
       confirmationMessage.value = ''
-    }, 5000)
+    }, 2000)
 }
 
 </script>
@@ -135,11 +136,14 @@ const addProductToCart = (produit) => {
             <button class="bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold shadow hover:bg-blue-50 hover:text-white">
               Détails
             </button>
-            <button class="bg-white text-orange-400 px-4 py-2 rounded-lg font-semibold shadow hover:bg-orange-500 hover:text-white" @click.stop="addProductToCart(produit)">
-              Ajouter au panier
-            </button>
+
           </div>
         </router-link>
+        <div class="absolute inset-0 bg-black/50 bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+          <button class="bg-white text-orange-400 px-4 py-2 rounded-lg font-semibold shadow hover:bg-orange-500 hover:text-white" @click.stop="addProductToCart(produit)">
+                Ajouter au panier
+            </button>
+        </div>
       </div>
     </div>
 

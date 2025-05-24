@@ -6,7 +6,7 @@ const Commande = require('../models/commandeModel');
 module.exports = {
   // Fonction asynchrone qui gère la création d'une commande à partir d'une requête HTTP POST
   createCommande: async (req, res) => {
-
+    console.log('Reçu du client :', req.body);
     // On extrait les données envoyées dans le corps de la requête (body)
     const {client_nom, client_email, client_number, total_price, produits } = req.body;
 
