@@ -1,16 +1,13 @@
 <script setup>
 import HeaderComponent from '../components/HeaderComponent.vue'
-import FooterComponent from '../components/FooterComponent.vue'
 </script>
 
 <template>
     <HeaderComponent/>
 
-  <div>
-    <h1 class="text-5xl text-gray-400">404 Not found</h1>
-  </div>
+    <h1 class="text-7xl mx-auto my-50 text-center font-bold font-serif text-gray-200">404 Not found</h1>
 
-    <FooterComponent/>
+
 </template>
 
 <style scoped>
