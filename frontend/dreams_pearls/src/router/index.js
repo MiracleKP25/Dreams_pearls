@@ -42,15 +42,15 @@ const router = createRouter({
       component: DetailView,
     },
     {
+      path: '/connexion',
+      name: 'connexion',
+      component: ConnexionView
+    },
+    {
       path: '/:pathMatch(.*)*',
       name: 'notfound',
       component: NotFoundView
-    },
-    {
-      path: '/connexion',
-      name: 'connexion',
-      component: ConnexionView,
-    },
+    }
   ],
 })
 

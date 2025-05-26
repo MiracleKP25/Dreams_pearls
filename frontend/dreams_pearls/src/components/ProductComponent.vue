@@ -78,7 +78,7 @@ const addProductToCart = (produit) => {
     confirmationMessage.value = 'Votre produit a été enregistrée avec succès ! Merci 😊'
     setTimeout(() => {
       confirmationMessage.value = ''
-    }, 2000)
+    }, 4000)
 }
 
 </script>
@@ -127,23 +127,27 @@ const addProductToCart = (produit) => {
           €{{ produit.prix }}
         </div>
 
-        <!-- Bouton Détail au survol -->
-        <router-link
-          :to="`/produit/${produit.id}`"
-          class="absolute inset-0 bg-black/50 bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300"
-        >
-          <div class="flex flex-col gap-y-4">
-            <button class="bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold shadow hover:bg-blue-50 hover:text-white">
-              Détails
-            </button>
+        <!-- Conteneur au survol -->
+      <div class="absolute inset-0 bg-black/50 bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+        <div class="flex flex-col gap-4">
+          <!-- Bouton Détails -->
+          <router-link
+            :to="`/produit/${produit.id}`"
+            class="bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold shadow hover:bg-blue-500 hover:text-white text-center"
+          >
+            Détails
+          </router-link>
 
-          </div>
-        </router-link>
-        <div class="absolute inset-0 bg-black/50 bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-          <button class="bg-white text-orange-400 px-4 py-2 rounded-lg font-semibold shadow hover:bg-orange-500 hover:text-white" @click.stop="addProductToCart(produit)">
-                Ajouter au panier
-            </button>
+          <!-- Bouton Ajouter -->
+          <button
+            class="bg-white text-orange-400 px-4 py-2 rounded-lg font-semibold shadow hover:bg-orange-500 hover:text-white"
+            @click.stop="addProductToCart(produit)"
+          >
+            Ajouter au panier
+          </button>
         </div>
+      </div>
+
       </div>
     </div>
 
