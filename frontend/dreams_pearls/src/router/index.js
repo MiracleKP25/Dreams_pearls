@@ -6,6 +6,7 @@ import ProductsView from '@/views/ProductsView.vue'
 import ContactView from '@/views/ContactView.vue'
 import DetailView from '@/views/DetailView.vue'
 import NotFoundView from '@/views/NotFoundView.vue'
+import ConnexionView from '@/views/Admin/ConnexionView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -44,7 +45,12 @@ const router = createRouter({
       path: '/:pathMatch(.*)*',
       name: 'notfound',
       component: NotFoundView
-    }
+    },
+    {
+      path: '/connexion',
+      name: 'connexion',
+      component: ConnexionView,
+    },
   ],
 })
 
